@@ -9,7 +9,9 @@ The goal is to construct a robust Hybrid Similarity Matrix that enhances recomme
 
 ### Core Recommendation Algorithm: Item-Based CF 
 
-The system predicts the rating $\hat{R}_{u, i}$ a user $u$ would give to an item $i$ based on the ratings the user has given to items $j$ that are similar to $i$.The prediction formula is:$$\hat{R}_{u, i} = \frac{\sum_{j \in N(i; u)} \text{Sim}(i, j) \cdot R_{u, j}}{\sum_{j \in N(i; u)} |\text{Sim}(i, j)|}$$
+The system predicts the rating $\hat{R}_{u, i}$ a user $u$ would give to an item $i$ based on the ratings the user has given to items $j$ that are similar to $i$.The prediction formula is:
+
+$$\hat{R}_{u, i} = \frac{\sum_{j \in N(i; u)} \text{Sim}(i, j) \cdot R_{u, j}}{\sum_{j \in N(i; u)} |\text{Sim}(i, j)|}$$
 
 Where $N(i; u)$ is the set of the $k$ most similar items to $i$ that user $u$ has already rated, and $\text{Sim}(i, j)$ is the final computed hybrid similarity between items $i$ and $j$
 
@@ -18,6 +20,7 @@ Where $N(i; u)$ is the set of the $k$ most similar items to $i$ that user $u$ ha
 The core of this project is the definition of $\text{Sim}(i, j)$ as a composite metric. It combines content-based features and a statistical reliability weight to capture a more nuanced relationship between movies.
 
 The final similarity score $\text{Sim}(i, j)$ is determined by a weighted linear combination of three distinct components:
+
 $$\text{Sim}(i, j) = \alpha \cdot \text{Sim}_{\text{Genre}}(i, j) + \beta \cdot \text{Sim}_{\text{Year}}(i, j) + \gamma \cdot \text{Weight}_{\text{Count}}(i, j)$$ 
 
 (Where $\alpha + \beta + \gamma = 1$ are hyperparameter weights.)
