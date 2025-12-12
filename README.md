@@ -19,6 +19,7 @@ The core of this project is the definition of $\text{Sim}(i, j)$ as a composite 
 
 The final similarity score $\text{Sim}(i, j)$ is determined by a weighted linear combination of three distinct components:
 $$\text{Sim}(i, j) = \alpha \cdot \text{Sim}_{\text{Genre}}(i, j) + \beta \cdot \text{Sim}_{\text{Year}}(i, j) + \gamma \cdot \text{Weight}_{\text{Count}}(i, j)$$ 
+
 (Where $\alpha + \beta + \gamma = 1$ are hyperparameter weights.)
 
 ### Genre Similarity ($\text{Sim}_{\text{Genre}}$)
